@@ -10,7 +10,7 @@ int main()
 
 	int c[k];
 
-    //initiliaze c to an empty array
+        //initiliaze c to an empty array
 	for(i=0;i<k;i++)
 		c[i]=0;
 
@@ -20,7 +20,7 @@ int main()
 
 	int a[n], b[n];
 
-    //initiliaze b to an empty array
+       //initiliaze b to an empty array
 	for(i=0;i<n;i++)
 		b[i]=0;
 
@@ -35,28 +35,25 @@ int main()
 		printf("%d ",a[i]);
 
 
-    /****************Counting Sort****************/
+       /****************Counting Sort****************/
 
 	for(i=0;i<n;i++)
     	 c[a[i]-1]=c[a[i]-1]+1;  //count number of elements equal to i
 
 
-    for(i=1;i<k;i++)
+       for(i=1;i<k;i++)
     	 c[i]=c[i]+c[i-1];  //count number of elements less than or equal to i
 
 
-    for(i=n-1;i>=0;i--)
+       for(i=n-1;i>=0;i--)
     	{
-    	 b[c[a[i]-1]-1]=a[i];  //assign element to it's final position
-    	 c[a[i]-1]=c[a[i]-1]-1;
+    	    b[c[a[i]-1]-1]=a[i];  //assign element to it's final position
+    	    c[a[i]-1]=c[a[i]-1]-1;
     	}
 
-    //print results	
-
-    printf("\n\nOutput:\n");
-
-	for(i=0;i<n;i++)
+       //print results	
+       printf("\n\nOutput:\n");
+       for(i=0;i<n;i++)
 		printf("%d ",b[i]);	
-
-	printf("\n\n");
+       printf("\n\n");
 }

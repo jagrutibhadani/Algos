@@ -55,5 +55,5 @@ int main()
        printf("\n\nOutput:\n");
        for(i=0;i<n;i++)
 		printf("%d ",b[i]);	
-       printf("\n\n");
+       
 }

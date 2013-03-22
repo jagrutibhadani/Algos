@@ -1,4 +1,4 @@
 Algos
 =====
 
-Algorithms are fun
+Simple implementations of common algorithms.

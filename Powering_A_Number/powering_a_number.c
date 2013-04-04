@@ -1,46 +1,39 @@
 #include <stdio.h>
 
 /* Algorithm will spit out incorrect results for calcultations that exceed integer limit! */
-int power_number_even(int n , int power)
+int power_number(int n , int power)
 {
-    if(power==0)
-        return 1;
-    if(power==2)
-        return n*n;
-    else
-        return power_number_even(n,power/2) * power_number_even(n,power/2);
+    int result;
 
-}
-
-int power_number_odd(int n , int power)
-{
     if(power==0)
         return 1;
     if(power==1)
         return n;
-    else if(power==2)
-        return n*n;
-    else
-        return power_number_odd(n,(power+1)/2) * power_number_odd(n,power/2);
+    else if(power%2==0)  /* Even */
+    {
+        result = power_number(n,power/2);
+        return result*result;
+    }
+    else                /* Odd */
+    {
+        result = power_number(n,(power-1)/2);
+        return n*result*result;
+    }
 
 }
 
-
 int main()
 {
-    int number, power;
+    int n, power;
 
     printf("Enter the number:\n");
 
-    scanf("%d",&number);
+    scanf("%d",&n);
 
     printf("Enter the power:\n");
 
     scanf("%d",&power);
 
-    if(number%2==0) /* Even */
-        printf("The powered number is %d\n", power_number_even(number,power));
-    else /* Odd */
-        printf("The powered number is %d\n", power_number_odd(number,power));
+    printf("The powered number is %d\n", power_number(n,power));
 
 }

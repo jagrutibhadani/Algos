@@ -25,7 +25,7 @@ void Merge(int* arr, int p, int r)
 			{
 				arr[k]=temp[i];
 				i++;
-			}	
+			}
 			else
 			{
 				arr[k]=temp[j];
@@ -42,10 +42,10 @@ void Merge(int* arr, int p, int r)
 			arr[k]=temp[i];
 			i++;
 		}
-			
+
 	}
 
-	
+
 }
 
 //Merge sort
@@ -64,20 +64,20 @@ void MergeSort(int* arr, int p, int r)
 
 int main()
 {
-	int i, j , key; 
+	int i, j;
 
-	printf("Enter the number of elements:\n");
+	printf("Enter the number of elements (greater than 0):\n");
 
 	scanf("%d",&count);
 
 	int a[count];
 
-	printf("Enter the elements:\n");
+	printf("Enter the integer elements:\n");
 
 	for(i=0;i<count;i++)
 		scanf("%d",&a[i]);
 
-	printf("Input:\n");
+	printf("\nInput:\n");
 
 	for(i=0;i<count;i++)
 		printf("%d ",a[i]);
@@ -85,10 +85,12 @@ int main()
 	//begin merge sort
 	MergeSort(a,0,count-1);
 
-    //print results	
+    //print results
 	printf("\n\nOutput:\n");
 	for(i=0;i<count;i++)
-		printf("%d ",a[i]);	
+		printf("%d ",a[i]);
+
+	printf("\n\n");
 
 
 }

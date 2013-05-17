@@ -1,3 +1,4 @@
+//Works great if k=O(n). If k is very large compared to n, then it's not gonna be good.
 #include <stdio.h>
 
 int main()
@@ -44,11 +45,11 @@ int main()
        for(i=1;i<k;i++)
     	 c[i]=c[i]+c[i-1];  //count number of elements less than or equal to i
 
-
+       //traversal is reversed to maintain order of input elements. This makes counting sort a stable sort.
        for(i=n-1;i>=0;i--)
     	{
     	    b[c[a[i]-1]-1]=a[i];  //assign element to it's final position
-    	    c[a[i]-1]=c[a[i]-1]-1;
+    	    c[a[i]-1]=c[a[i]-1]-1; //to take care of duplicate elements
     	}
 
        //print results	

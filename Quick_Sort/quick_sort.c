@@ -61,7 +61,7 @@ int main()
     for(i=0;i<count;i++)
         printf("%d ",a[i]);
 
-    //begin merge sort
+    //begin quick sort
     QuickSort(a,0,count-1);
 
     //print results
